@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import MapView from '../components/MapView';
-import Chatbot from '../components/Chatbot';
 import { foodDistributionCenters } from '../data/food-distribution-centers';
 import { shelters } from '../data/shelters';
 import { hospitals } from '../data/hospitals';
@@ -23,7 +22,6 @@ const MapPage = () => {
           properties={[...foodDistributionCenters, ...shelters, ...hospitals, ...restrooms, ...laundromats]}
         />
       </div>
-      <Chatbot />
     </div>
   );
 };

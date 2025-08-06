@@ -19,6 +19,10 @@ const Login = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login attempt:', formData);
+    
+    // Accept any credentials - just store login state
+    localStorage.setItem('isLoggedIn', 'true');
+    
     // Redirect to map page after login
     navigate('/map');
   };

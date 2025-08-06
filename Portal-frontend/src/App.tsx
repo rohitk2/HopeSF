@@ -12,6 +12,11 @@ import Emergency from "./pages/Emergency";
 import Help from "./pages/Help";
 import MapPage from "./map/pages/MapPage";
 import NotFound from "./pages/NotFound";
+import FoodBankLogin from "./pages/FoodBankLogin";
+import ShelterLogin from "./pages/ShelterLogin";
+import RegisterFoodBank from "./pages/RegisterFoodBank";
+import RegisterShelter from "./pages/RegisterShelter";
+import BecomePartner from "./pages/BecomePartner";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +35,11 @@ const App = () => (
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/help" element={<Help />} />
           <Route path="/map" element={<MapPage />} />
+          <Route path="/food-bank-login" element={<FoodBankLogin />} />
+          <Route path="/shelter-login" element={<ShelterLogin />} />
+          <Route path="/register-food-bank" element={<RegisterFoodBank />} />
+          <Route path="/register-shelter" element={<RegisterShelter />} />
+          <Route path="/become-partner" element={<BecomePartner />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL \"*\" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
