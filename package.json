@@ -2,5 +2,8 @@
   "name": "Full-app",
   "lockfileVersion": 3,
   "requires": true,
-  "packages": {}
+  "packages": {},
+  "scripts": {
+    "build": "cd Portal-frontend && npm run build"
+  }
 }
