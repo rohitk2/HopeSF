@@ -63,39 +63,42 @@ const Navigation = () => {
               Find Help
             </Link>
             
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                For Organizations
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-background border border-border shadow-lg z-[10000]">
-                <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
-                  <Link to="/food-bank-login" className="w-full">
-                    Food Bank Login
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
-                  <Link to="/shelter-login" className="w-full">
-                    Shelter Login
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
-                  <Link to="/register-food-bank" className="w-full">
-                    Register Food Bank
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
-                  <Link to="/register-shelter" className="w-full">
-                    Register Shelter
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
-                  <Link to="/become-partner" className="w-full">
-                    Become a Partner
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Only show "For Organizations" dropdown if NOT logged in */}
+            {!isLoggedIn && (
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  For Organizations
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-48 bg-background border border-border shadow-lg z-[10000]">
+                  <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
+                    <Link to="/food-bank-login" className="w-full">
+                      Food Bank Login
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
+                    <Link to="/shelter-login" className="w-full">
+                      Shelter Login
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
+                    <Link to="/register-food-bank" className="w-full">
+                      Register Food Bank
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
+                    <Link to="/register-shelter" className="w-full">
+                      Register Shelter
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-foreground hover:text-primary cursor-pointer">
+                    <Link to="/become-partner" className="w-full">
+                      Become a Partner
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
 
             <Link to="/about" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
               About
