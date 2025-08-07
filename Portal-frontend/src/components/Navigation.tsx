@@ -109,9 +109,12 @@ const Navigation = () => {
               Emergency
             </Link>
 
-            <Link to="/map" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-              Map
-            </Link>
+            {/* Only show Map link if logged in */}
+            {isLoggedIn && (
+              <Link to="/map" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                Map
+              </Link>
+            )}
 
             {/* Action Buttons */}
             {isLoggedIn ? (

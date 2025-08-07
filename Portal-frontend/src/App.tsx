@@ -17,6 +17,7 @@ import ShelterLogin from "./pages/ShelterLogin";
 import RegisterFoodBank from "./pages/RegisterFoodBank";
 import RegisterShelter from "./pages/RegisterShelter";
 import BecomePartner from "./pages/BecomePartner";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,11 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/map" element={<MapPage />} />
+          <Route path="/map" element={
+            <ProtectedRoute>
+              <MapPage />
+            </ProtectedRoute>
+          } />
           <Route path="/food-bank-login" element={<FoodBankLogin />} />
           <Route path="/shelter-login" element={<ShelterLogin />} />
           <Route path="/register-food-bank" element={<RegisterFoodBank />} />
